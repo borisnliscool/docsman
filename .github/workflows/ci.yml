@@ -1,0 +1,42 @@
+name: CI Backend
+
+on:
+  push:
+    branches:
+      - '*'
+  pull_request:
+    types: [ opened, synchronize ]
+
+jobs:
+  build:
+    name: Build Docsman CLI
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup rust-toolchain stable
+        id: rust-toolchain
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 10.11.1
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+        working-directory: ./layout
+
+      - name: Build
+        run: pnpm build
+        working-directory: ./layout
+
+      - name: Build
+        run: cargo build --release
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: docsman
+          path: target/release/docsman
