@@ -12,7 +12,7 @@ pub struct DocsmanArguments {
     pub path: PathBuf,
     #[clap(short, long, default_value_t = 8080)]
     pub port: u16,
-    #[clap(short, long, default_value = "0.0.0.0")]
+    #[clap(long, default_value = "0.0.0.0")]
     pub host: String,
     #[clap(short, long)]
     pub autoreload: Option<bool>,
