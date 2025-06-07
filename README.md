@@ -12,7 +12,7 @@ Arguments:
 
 Options:
   -p, --port <PORT>              [default: 8080]
-  -h, --host <HOST>              [default: 0.0.0.0]
+      --host <HOST>              [default: 0.0.0.0]
   -a, --autoreload <AUTORELOAD>  [possible values: true, false]
   -l, --legend <LEGEND>          [possible values: true, false]
   -h, --help                     Print help

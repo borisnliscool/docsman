@@ -88,11 +88,11 @@
     @custom-variant dark (&:where(.dark, .dark *));
 
     :global(body) {
-        @apply bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 font-sans;
+        @apply bg-slate-50 dark:bg-neutral-900 text-slate-900 dark:text-slate-100 font-sans;
     }
 
     :global(h1, h2, h3, h4, h5, h6) {
-        @apply mt-8 mb-2 text-slate-900 font-bold border-b border-slate-200 dark:border-slate-800 dark:text-slate-100;
+        @apply mt-8 mb-2 text-slate-900 font-bold border-b border-slate-200 dark:border-neutral-800 dark:text-slate-100;
     }
 
     :global(h1) {
@@ -120,7 +120,7 @@
     }
 
     :global(blockquote) {
-        @apply border-l-4 border-slate-200 pl-4 m-0 dark:border-slate-800;
+        @apply border-l-4 border-slate-200 pl-4 m-0 dark:border-neutral-800;
     }
 
     :global(img) {
@@ -128,10 +128,10 @@
     }
 
     :global(a) {
-        @apply text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-600;
+        @apply text-blue-600 hover:text-blue-800;
     }
 
     :global(pre) {
-        @apply overflow-x-auto bg-slate-200 p-4 rounded dark:bg-slate-800;
+        @apply overflow-x-auto bg-slate-200 p-4 rounded dark:bg-neutral-800;
     }
 </style>
