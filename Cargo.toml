@@ -14,7 +14,13 @@ markdown = "1.0.0"
 notify = "8.0.0"
 futures = "0.3.31"
 uuid = { version = "1.17.0", features = ["v4"] }
-serde = { version = "1.0.219", features = ["derive"] }
 serde_json = "1.0.140"
 base64 = "0.22.1"
 glob = "0.3.2"
+
+[profile.release]
+strip = true
+opt-level = "z"
+lto = true
+codegen-units = 1
+panic = "abort"
